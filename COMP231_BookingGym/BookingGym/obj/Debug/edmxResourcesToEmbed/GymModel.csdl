@@ -2,19 +2,30 @@
 <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="GymModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
   <EntityContainer Name="GymModelContainer" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Users" EntityType="GymModel.User" />
+    <EntitySet Name="Classes" EntityType="GymModel.Class" />
   </EntityContainer>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="UserId" />
     </Key>
     <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="true" />
-    <Property Name="Email" Type="String" Nullable="true" />
-    <Property Name="Password" Type="String" Nullable="true" />
-    <Property Name="Address" Type="String" annotation:StoreGeneratedPattern="None" Nullable="true" />
-    <Property Name="City" Type="String" Nullable="true" />
-    <Property Name="PostalCode" Type="String" Nullable="true" />
-    <Property Name="Province" Type="String" Nullable="true" />
-    <Property Name="Admin" Type="String" Nullable="true" />
+    <Property Name="Name" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" annotation:StoreGeneratedPattern="None" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="PostalCode" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Province" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Admin" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="ClassId" />
+    </Key>
+    <Property Name="ClassId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassName" Type="String" Nullable="false" />
+    <Property Name="Professor" Type="String" Nullable="false" />
+    <Property Name="Starts" Type="String" Nullable="false" />
+    <Property Name="Finish" Type="String" Nullable="false" />
   </EntityType>
 </Schema>

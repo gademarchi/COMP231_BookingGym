@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/20/2018 14:43:24
--- Generated from EDMX file: C:\Users\gadem\IBT\BookingGym\BookingGym\GymModel.edmx
+-- Date Created: 04/23/2018 23:33:09
+-- Generated from EDMX file: C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\GymModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -44,6 +44,16 @@ CREATE TABLE [dbo].[Users] (
 );
 GO
 
+-- Creating table 'Classes'
+CREATE TABLE [dbo].[Classes] (
+    [ClassId] int IDENTITY(1,1) NOT NULL,
+    [ClassName] nvarchar(max)  NOT NULL,
+    [Professor] nvarchar(max)  NOT NULL,
+    [Starts] nvarchar(max)  NOT NULL,
+    [Finish] nvarchar(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -52,6 +62,12 @@ GO
 ALTER TABLE [dbo].[Users]
 ADD CONSTRAINT [PK_Users]
     PRIMARY KEY CLUSTERED ([UserId] ASC);
+GO
+
+-- Creating primary key on [ClassId] in table 'Classes'
+ALTER TABLE [dbo].[Classes]
+ADD CONSTRAINT [PK_Classes]
+    PRIMARY KEY CLUSTERED ([ClassId] ASC);
 GO
 
 -- --------------------------------------------------

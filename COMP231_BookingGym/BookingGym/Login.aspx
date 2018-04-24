@@ -16,7 +16,7 @@
     </div>
     <br />
     <div class="input">
-        <asp:TextBox runat="server" ID="txtPassword" class="form-control" Width="330px" placeholder="Password"></asp:TextBox>
+        <asp:TextBox runat="server" ID="txtPassword" class="form-control" TextMode="Password" Width="330px" placeholder="Password"></asp:TextBox>
     </div>
     <br />
     <div class="input">
@@ -26,7 +26,7 @@
     <div class="input">
         <asp:Button runat="server" ID="btnSignUp" OnClick="btnSignUp_Click" class="btn btn-primary btn-block" Text="Sign Up"></asp:Button>
     </div>
-    <p class="mt-5 mb-3 text-muted">&copy; BookingGym</p>
+
 
 
 

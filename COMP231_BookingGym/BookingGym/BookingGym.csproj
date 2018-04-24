@@ -141,7 +141,9 @@
     <Content Include="About.aspx" />
     <Content Include="Images\gym-icon.png" />
     <Content Include="Login.aspx" />
+    <Content Include="ManageClasses.aspx" />
     <Content Include="ManageUsers.aspx" />
+    <Content Include="RegisterClass.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -219,6 +221,9 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Class.cs">
+      <DependentUpon>GymModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -226,12 +231,26 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManageClasses.aspx.cs">
+      <DependentUpon>ManageClasses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageClasses.aspx.designer.cs">
+      <DependentUpon>ManageClasses.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageUsers.aspx.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ManageUsers.aspx.designer.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterClass.aspx.cs">
+      <DependentUpon>RegisterClass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterClass.aspx.designer.cs">
+      <DependentUpon>RegisterClass.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>

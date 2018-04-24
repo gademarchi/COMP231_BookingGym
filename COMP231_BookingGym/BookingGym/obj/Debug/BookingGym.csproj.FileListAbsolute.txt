@@ -175,7 +175,6 @@ C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\bin\Microsoft.AI.Dep
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\bin\Microsoft.AI.Web.xml
-C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym.csprojResolveAssemblyReference.cache
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym.csproj.CoreCompileInputs.cache
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym.csproj.CopyComplete
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym.dll

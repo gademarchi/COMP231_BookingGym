@@ -58,7 +58,8 @@
                         <li><a runat="server" href="~/Login">Home</a></li>
                         <li><a runat="server" href="~/SignUp">Sign Up</a></li>
                         <li><a runat="server" href="~/ManageUsers">Manage Users</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/RegisterClass">Register Class</a></li>
+                        <li><a runat="server" href="~/ManageClasses">Manage Classes</a></li>
                     </ul>
                 </div>
             </div>
