@@ -179,3 +179,4 @@ C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym.csproj.CopyComplete
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym.dll
 C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym.pdb
+C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\obj\Debug\BookingGym.csprojResolveAssemblyReference.cache

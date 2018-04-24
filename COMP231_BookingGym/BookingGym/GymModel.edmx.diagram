@@ -7,6 +7,7 @@
       <Diagram DiagramId="f7baa99a215744f78565613e7ac1024e" Name="Diagram1" >
         <EntityTypeShape EntityType="GymModel.User" Width="1.5" PointX="1.125" PointY="0.5" />
         <EntityTypeShape EntityType="GymModel.Class" Width="1.5" PointX="3.875" PointY="0.75" />
+        <EntityTypeShape EntityType="GymModel.Message" Width="1.5" PointX="7.125" PointY="1.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

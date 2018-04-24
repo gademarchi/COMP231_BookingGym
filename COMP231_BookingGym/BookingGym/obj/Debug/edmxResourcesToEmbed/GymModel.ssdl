@@ -3,6 +3,7 @@
   <EntityContainer Name="GymModelStoreContainer">
     <EntitySet Name="Users" EntityType="GymModel.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Classes" EntityType="GymModel.Store.Classes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messages" EntityType="GymModel.Store.Messages" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -23,9 +24,19 @@
       <PropertyRef Name="ClassId" />
     </Key>
     <Property Name="ClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ClassName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Professor" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Starts" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Finish" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClassName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Professor" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Starts" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Finish" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescMessage" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="From" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Posted" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
 </Schema>

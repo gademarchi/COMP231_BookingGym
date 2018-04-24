@@ -8,6 +8,7 @@
   <EntityContainer Name="GymModelStoreContainer">
     <EntitySet Name="Users" EntityType="GymModel.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Classes" EntityType="GymModel.Store.Classes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messages" EntityType="GymModel.Store.Messages" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -28,10 +29,20 @@
       <PropertyRef Name="ClassId" />
     </Key>
     <Property Name="ClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ClassName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Professor" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Starts" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Finish" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClassName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Professor" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Starts" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Finish" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="DescMessage" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="From" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Posted" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -40,30 +51,41 @@
         <EntityContainer Name="GymModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Users" EntityType="GymModel.User" />
           <EntitySet Name="Classes" EntityType="GymModel.Class" />
+          <EntitySet Name="Messages" EntityType="GymModel.Message" />
         </EntityContainer>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Email" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Password" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Address" Type="String" annotation:StoreGeneratedPattern="None" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="City" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="PostalCode" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Province" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Admin" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
+          <Property Name="Address" Type="String" annotation:StoreGeneratedPattern="None" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
+          <Property Name="City" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
+          <Property Name="Province" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
+          <Property Name="Admin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
         </EntityType>
         <EntityType Name="Class">
           <Key>
             <PropertyRef Name="ClassId" />
           </Key>
           <Property Name="ClassId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClassName" Type="String" Nullable="false" />
-          <Property Name="Professor" Type="String" Nullable="false" />
-          <Property Name="Starts" Type="String" Nullable="false" />
-          <Property Name="Finish" Type="String" Nullable="false" />
+          <Property Name="ClassName" Type="String" Nullable="true" />
+          <Property Name="Professor" Type="String" Nullable="true" />
+          <Property Name="Starts" Type="String" Nullable="true" />
+          <Property Name="Finish" Type="String" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageId" />
+          </Key>
+          <Property Name="MessageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="true" />
+          <Property Name="DescMessage" Type="String" Nullable="true" />
+          <Property Name="From" Type="String" Nullable="true" />
+          <Property Name="Posted" Type="String" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -94,6 +116,17 @@
           <ScalarProperty Name="Professor" ColumnName="Professor" />
           <ScalarProperty Name="Starts" ColumnName="Starts" />
           <ScalarProperty Name="Finish" ColumnName="Finish" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="IsTypeOf(GymModel.Message)">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="DescMessage" ColumnName="DescMessage" />
+          <ScalarProperty Name="From" ColumnName="From" />
+          <ScalarProperty Name="Posted" ColumnName="Posted" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

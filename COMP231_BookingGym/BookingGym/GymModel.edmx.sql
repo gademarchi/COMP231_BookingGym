@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/23/2018 23:33:09
+-- Date Created: 04/24/2018 00:47:22
 -- Generated from EDMX file: C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\GymModel.edmx
 -- --------------------------------------------------
 
@@ -24,6 +24,9 @@ GO
 
 IF OBJECT_ID(N'[dbo].[Users]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Users];
+GO
+IF OBJECT_ID(N'[dbo].[Classes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Classes];
 GO
 
 -- --------------------------------------------------
@@ -47,10 +50,20 @@ GO
 -- Creating table 'Classes'
 CREATE TABLE [dbo].[Classes] (
     [ClassId] int IDENTITY(1,1) NOT NULL,
-    [ClassName] nvarchar(max)  NOT NULL,
-    [Professor] nvarchar(max)  NOT NULL,
-    [Starts] nvarchar(max)  NOT NULL,
-    [Finish] nvarchar(max)  NOT NULL
+    [ClassName] nvarchar(max)  NULL,
+    [Professor] nvarchar(max)  NULL,
+    [Starts] nvarchar(max)  NULL,
+    [Finish] nvarchar(max)  NULL
+);
+GO
+
+-- Creating table 'Messages'
+CREATE TABLE [dbo].[Messages] (
+    [MessageId] int IDENTITY(1,1) NOT NULL,
+    [Title] nvarchar(max)  NULL,
+    [DescMessage] nvarchar(max)  NULL,
+    [From] nvarchar(max)  NULL,
+    [Posted] nvarchar(max)  NULL
 );
 GO
 
@@ -68,6 +81,12 @@ GO
 ALTER TABLE [dbo].[Classes]
 ADD CONSTRAINT [PK_Classes]
     PRIMARY KEY CLUSTERED ([ClassId] ASC);
+GO
+
+-- Creating primary key on [MessageId] in table 'Messages'
+ALTER TABLE [dbo].[Messages]
+ADD CONSTRAINT [PK_Messages]
+    PRIMARY KEY CLUSTERED ([MessageId] ASC);
 GO
 
 -- --------------------------------------------------

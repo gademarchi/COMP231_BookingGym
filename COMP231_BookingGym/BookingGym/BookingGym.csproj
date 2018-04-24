@@ -143,6 +143,7 @@
     <Content Include="Login.aspx" />
     <Content Include="ManageClasses.aspx" />
     <Content Include="ManageUsers.aspx" />
+    <Content Include="PostMessage.aspx" />
     <Content Include="RegisterClass.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -206,6 +207,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="ViewMessages.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -244,6 +246,16 @@
     </Compile>
     <Compile Include="ManageUsers.aspx.designer.cs">
       <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs">
+      <DependentUpon>GymModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostMessage.aspx.cs">
+      <DependentUpon>PostMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostMessage.aspx.designer.cs">
+      <DependentUpon>PostMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="RegisterClass.aspx.cs">
       <DependentUpon>RegisterClass.aspx</DependentUpon>
@@ -301,6 +313,13 @@
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>GymModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewMessages.aspx.cs">
+      <DependentUpon>ViewMessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewMessages.aspx.designer.cs">
+      <DependentUpon>ViewMessages.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
