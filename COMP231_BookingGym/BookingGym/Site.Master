@@ -12,7 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -42,12 +42,12 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    
+
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>                 
+                    </button>
                     <a class="navbar-brand" runat="server" href="~/Login">
                         <img src="http://icons.iconarchive.com/icons/sonya/swarm/128/gym-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
                         Booking Gym
@@ -55,14 +55,44 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/Login">Home</a></li>
-                        <li><a runat="server" href="~/SignUp">Sign Up</a></li>
-                        <li><a runat="server" href="~/ManageUsers">Manage Users</a></li>
+                        <%--                        <li><a runat="server" href="~/ManageUsers">Manage Users</a></li>
                         <li><a runat="server" href="~/RegisterClass">Register Class</a></li>
                         <li><a runat="server" href="~/ManageClasses">Manage Classes</a></li>
                         <li><a runat="server" href="~/PostMessage">Post a Message</a></li>
                         <li><a runat="server" href="~/ViewMessages">View Messages</a></li>
-                        <li><a runat="server" href="~/RegisterTimetable">Register Timetable</a></li>
+                        <li><a runat="server" href="~/RegisterTimetable">Register Timetable</a></li>--%>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkSignUp" Visible="false" Text="Sign Up" href="SignUp.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkMUsers" Visible="false" Text="Manage Users" href="ManageUsers.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkRClasses" Visible="false" Text="Register Classes" href="RegisterClass.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkMClasses" Visible="false" Text="Manage Classes" href="ManageClasses.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkPMessages" Visible="false" Text="Post Messages" href="PostMessage.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkVMessages" Visible="false" Text="View Messages" href="ViewMessages.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkRTimetable" Visible="false" Text="Register Timetable" href="RegisterTimetable.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkVTimetable" Visible="false" Text="View Timetable" href="ViewTimetable.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkCList" Visible="false" Text="Class List" href="ClassList.aspx"></asp:LinkButton>
+                        </li>
+                        <li class="nav-item"><a runat="server"><%:Session["Email"] %></a></li>
+                        <li class="navbar-brand">
+                            <asp:Button CssClass="btn btn-primary my-2 my-sm-0 btn-sm" ID="btnLogout" runat="server" Visible="false" Text="Log Out" OnClick="btnLogout_Click" />
+                        </li>
+
                     </ul>
                 </div>
             </div>

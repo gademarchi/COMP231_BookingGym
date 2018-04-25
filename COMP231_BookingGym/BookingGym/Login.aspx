@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="BookingGym.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
     <br />
     <div class="text-center">
         <img class="mb-4" src="http://icons.iconarchive.com/icons/sonya/swarm/128/gym-icon.png" alt="" width="72" height="72">

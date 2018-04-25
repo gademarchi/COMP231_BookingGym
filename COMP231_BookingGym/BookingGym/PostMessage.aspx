@@ -8,5 +8,6 @@
         <asp:TextBox runat="server" ID="txtTitle" placeholder="Message Title" Width="400px" CssClass="form-control"></asp:TextBox><br />
         <asp:TextBox runat="server" ID="txtMessage" placeholder="Professor" TextMode="MultiLine" Height="120px" Width="400px" CssClass="form-control"></asp:TextBox>
         <br />
-        <asp:Button runat="server" ID="btnPost" Text="Save" CssClass="btn btn-secondary" OnClick="btnPost_Click" OnClientClick='return confirm("Message Sent");' />
+        <asp:Button runat="server" ID="btnPost" Text="Post" CssClass="btn btn-primary" OnClick="btnPost_Click" OnClientClick='return confirm("Message Sent");' />
+    </div>
 </asp:Content>

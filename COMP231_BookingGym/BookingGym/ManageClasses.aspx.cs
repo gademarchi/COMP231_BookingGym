@@ -42,6 +42,7 @@ namespace BookingGym
                 txtClassId.Text = Convert.ToString(cl.ClassId);
                 txtClassName.Text = cl.ClassName;
                 txtProfessor.Text = cl.Professor;
+                ddlWeekDay.Text = cl.WeekDay;
                 txtClassStarts.Text = cl.Starts;
                 txtClassFinish.Text = cl.Finish;
 
@@ -60,6 +61,7 @@ namespace BookingGym
             Class cl = db.Classes.First(c => c.ClassId == ClassId);
             cl.ClassName = txtClassName.Text;
             cl.Professor = txtProfessor.Text;
+            cl.WeekDay = ddlWeekDay.Text;
             cl.Starts = txtClassStarts.Text;
             cl.Finish = txtClassFinish.Text;
             db.SaveChanges();
@@ -74,7 +76,7 @@ namespace BookingGym
                 if (db.Classes.Count() > 0)
                 {
                     gvClasses.DataSource = (from c in db.Classes
-                                            select new { c.ClassId, c.ClassName, c.Professor, c.Starts, c.Finish }).ToList();
+                                            select new { c.ClassId, c.ClassName, c.Professor, c.WeekDay , c.Starts, c.Finish }).ToList();
 
                     gvClasses.DataBind();
 

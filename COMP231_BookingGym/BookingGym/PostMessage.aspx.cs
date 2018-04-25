@@ -21,6 +21,7 @@ namespace BookingGym
                 var m = new Message();
                 m.Title = txtTitle.Text;
                 m.DescMessage = txtMessage.Text;
+                m.From = Session["Email"].ToString();
                 m.Posted = Convert.ToString(DateTime.Now);
 
                 db.Messages.Add(m);

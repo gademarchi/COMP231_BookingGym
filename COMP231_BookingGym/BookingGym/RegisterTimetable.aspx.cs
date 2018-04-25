@@ -11,35 +11,51 @@ namespace BookingGym
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BindGridUser();
+            BindGrid();
         }
 
-
-        public void BindGridUser()
+        public void BindGrid()
         {
             using (GymModelContainer db = new GymModelContainer())
             {
-                if (db.Users.Count() > 0)
+                if (db.Classes.Count() > 0)
                 {
-                    ddlUser.DataSource = (from u in db.Users
-                                          select u.UserId +" - "+ u.Name).ToList();
+                    gvTimetable.DataSource = (from c in db.Classes
+                                            select new { c.ClassId, c.ClassName, c.Professor, c.WeekDay, c.Starts, c.Finish, }).ToList();
 
-                    ddlUser.DataBind();
+                    gvTimetable.DataBind();
 
                 }
                 else
                 {
-                    ddlUser.DataSource = null;
-                    ddlUser.DataBind();
+                    gvTimetable.DataSource = null;
+                    gvTimetable.DataBind();
                 }
+            }
 
 
+
+        }
+
+        protected void gvTimetable_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName == "Add")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvTimetable.Rows[index];
+                int ClassId = Convert.ToInt32(gvTimetable.DataKeys[index].Value);
+
+                GymModelContainer db = new GymModelContainer();
+
+                var tm = new Timetable();
+                tm.ClassId = ClassId;
+                tm.UserId = Convert.ToInt32(Session["UserId"]);
+
+                db.Timetables.Add(tm);
+                db.SaveChanges();
+                BindGrid();
 
             }
         }
-
-
-
-
     }
 }

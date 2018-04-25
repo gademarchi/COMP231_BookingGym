@@ -28,13 +28,17 @@ namespace BookingGym
                 u.PostalCode = txtPostalCode.Text;
                 u.Province = Convert.ToString(ddlProvince.SelectedValue);
 
-                if (rdYes.Checked == true)
+                if (rdAdmin.Checked == true)
                 {
-                    u.Admin = "Yes";
+                    u.Admin = "Admin";
                 }
-                else if (rdNo.Checked == true)
+                else if (rdUser.Checked == true)
                 {
-                    u.Admin = "No";
+                    u.Admin = "User";
+                }
+                else if (rdInstructor.Checked==true)
+                {
+                    u.Admin = "Instructor";
                 }
                 else
                 {

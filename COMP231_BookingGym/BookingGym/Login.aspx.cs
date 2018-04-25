@@ -33,7 +33,15 @@ namespace BookingGym
                                      where cp.Email == txtEmail.Text
                                      select cp.Password).SingleOrDefault();
 
-                if(checkEmail != txtEmail.Text)
+                var verifyAdmin = (from v in db.Users
+                                   where v.Email == txtEmail.Text
+                                   select v.Admin).SingleOrDefault();
+
+                var verifyId = (from v in db.Users
+                                   where v.Email == txtEmail.Text
+                                   select v.UserId).SingleOrDefault();
+
+                if (checkEmail != txtEmail.Text)
                 {
                     lblMsg.Visible = true;
                     
@@ -44,7 +52,12 @@ namespace BookingGym
                 }
                 else
                 {
-                    Response.Redirect("ManageClasses.aspx");
+                    
+                    Session["Email"] = txtEmail.Text;
+                    Session["Admin"] = verifyAdmin;
+                    Session["UserId"] = verifyId;
+                    Response.Redirect("ViewMessages.aspx");
+
                 }
 
 

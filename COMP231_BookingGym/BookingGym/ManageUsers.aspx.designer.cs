@@ -112,22 +112,31 @@ namespace BookingGym {
         protected global::System.Web.UI.WebControls.Label label1;
         
         /// <summary>
-        /// rdYes control.
+        /// rdAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdYes;
+        protected global::System.Web.UI.WebControls.RadioButton rdAdmin;
         
         /// <summary>
-        /// rdNo control.
+        /// rdUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton rdNo;
+        protected global::System.Web.UI.WebControls.RadioButton rdUser;
+        
+        /// <summary>
+        /// rdInstructor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton rdInstructor;
         
         /// <summary>
         /// btnUpdate control.

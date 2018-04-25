@@ -72,8 +72,9 @@
         <asp:Label runat="server" CssClass="alert alert-danger" ID="label1" Text="The User is a Admin?"></asp:Label>
         <br />
         <br />
-        <asp:RadioButton Text="Yes" ID="rdYes" GroupName="admin" CssClass="radio" runat="server"></asp:RadioButton>
-        <asp:RadioButton Text="No" ID="rdNo" GroupName="admin" CssClass="radio" runat="server"></asp:RadioButton>
+        <asp:RadioButton Text="Admin" ID="rdAdmin" GroupName="admin" CssClass="radio" runat="server"></asp:RadioButton>
+        <asp:RadioButton Text="User" ID="rdUser" GroupName="admin" CssClass="radio" runat="server"></asp:RadioButton>
+        <asp:RadioButton Text="Instructor" ID="rdInstructor" GroupName="admin" CssClass="radio" runat="server"></asp:RadioButton>
         <br />
         <div class="form-inline">
             <asp:Button runat="server" ID="btnUpdate" Text="Update" OnClick="btnUpdate_Click" OnClientClick='return confirm("Employee Record Update Successfully.");' CssClass="btn btn-info" />

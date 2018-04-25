@@ -37,7 +37,7 @@
     <Property Name="PostalCode" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Province" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Admin" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="TimetableTimetableId" Type="int" Nullable="false" />
+    <Property Name="TimetableTimetableId" Type="int" Nullable="true" />
     <Property Name="Weight" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Height" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Age" Type="nvarchar(max)" Nullable="true" />
@@ -51,6 +51,7 @@
     <Property Name="Professor" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Starts" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Finish" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="WeekDay" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Messages">
     <Key>
@@ -67,8 +68,8 @@
       <PropertyRef Name="TimetableId" />
     </Key>
     <Property Name="TimetableId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserId" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ClassId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ClassId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TimetableClass">
     <Key>

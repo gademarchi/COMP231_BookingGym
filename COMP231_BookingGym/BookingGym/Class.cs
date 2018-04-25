@@ -25,6 +25,7 @@ namespace BookingGym
         public string Professor { get; set; }
         public string Starts { get; set; }
         public string Finish { get; set; }
+        public string WeekDay { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Timetable> Timetables { get; set; }

@@ -10,24 +10,15 @@
 namespace BookingGym {
     
     
-    public partial class Register_Timetable {
+    public partial class ClassList {
         
         /// <summary>
-        /// Label1 control.
+        /// gvList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// gvTimetable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTimetable;
+        protected global::System.Web.UI.WebControls.GridView gvList;
     }
 }

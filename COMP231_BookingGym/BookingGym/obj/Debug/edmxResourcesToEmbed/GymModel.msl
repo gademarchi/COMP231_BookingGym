@@ -28,6 +28,7 @@
           <ScalarProperty Name="Professor" ColumnName="Professor" />
           <ScalarProperty Name="Starts" ColumnName="Starts" />
           <ScalarProperty Name="Finish" ColumnName="Finish" />
+          <ScalarProperty Name="WeekDay" ColumnName="WeekDay" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

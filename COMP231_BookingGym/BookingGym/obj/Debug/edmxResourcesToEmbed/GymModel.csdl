@@ -27,7 +27,7 @@
     <Property Name="PostalCode" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
     <Property Name="Province" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
     <Property Name="Admin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" Nullable="true" />
-    <Property Name="TimetableTimetableId" Type="Int32" Nullable="false" />
+    <Property Name="TimetableTimetableId" Type="Int32" Nullable="true" />
     <Property Name="Weight" Type="String" Nullable="true" />
     <Property Name="Height" Type="String" Nullable="true" />
     <Property Name="Age" Type="String" Nullable="true" />
@@ -43,6 +43,7 @@
     <Property Name="Starts" Type="String" Nullable="true" />
     <Property Name="Finish" Type="String" Nullable="true" />
     <NavigationProperty Name="Timetables" Relationship="GymModel.TimetableClass" FromRole="Class" ToRole="Timetable" />
+    <Property Name="WeekDay" Type="String" Nullable="true" />
   </EntityType>
   <EntityType Name="Message">
     <Key>
@@ -59,8 +60,8 @@
       <PropertyRef Name="TimetableId" />
     </Key>
     <Property Name="TimetableId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserId" Type="String" Nullable="false" />
-    <Property Name="ClassId" Type="String" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ClassId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Classes" Relationship="GymModel.TimetableClass" FromRole="Timetable" ToRole="Class" />
     <NavigationProperty Name="Users" Relationship="GymModel.TimetableUser" FromRole="Timetable" ToRole="User" />
   </EntityType>

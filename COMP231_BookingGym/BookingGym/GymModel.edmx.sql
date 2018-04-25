@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/24/2018 16:55:32
+-- Date Created: 04/25/2018 02:43:47
 -- Generated from EDMX file: C:\Users\gadem\IBT\BookingGym\COMP231_BookingGym\BookingGym\GymModel.edmx
 -- --------------------------------------------------
 
@@ -17,14 +17,17 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_TimetableUser]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Users] DROP CONSTRAINT [FK_TimetableUser];
-GO
 IF OBJECT_ID(N'[dbo].[FK_TimetableClass_Timetable]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TimetableClass] DROP CONSTRAINT [FK_TimetableClass_Timetable];
 GO
 IF OBJECT_ID(N'[dbo].[FK_TimetableClass_Class]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[TimetableClass] DROP CONSTRAINT [FK_TimetableClass_Class];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TimetableUser_Timetable]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TimetableUser] DROP CONSTRAINT [FK_TimetableUser_Timetable];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TimetableUser_User]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TimetableUser] DROP CONSTRAINT [FK_TimetableUser_User];
 GO
 
 -- --------------------------------------------------
@@ -46,6 +49,9 @@ GO
 IF OBJECT_ID(N'[dbo].[TimetableClass]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TimetableClass];
 GO
+IF OBJECT_ID(N'[dbo].[TimetableUser]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TimetableUser];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -62,7 +68,7 @@ CREATE TABLE [dbo].[Users] (
     [PostalCode] nvarchar(max)  NULL,
     [Province] nvarchar(max)  NULL,
     [Admin] nvarchar(max)  NULL,
-    [TimetableTimetableId] int  NOT NULL,
+    [TimetableTimetableId] int  NULL,
     [Weight] nvarchar(max)  NULL,
     [Height] nvarchar(max)  NULL,
     [Age] nvarchar(max)  NULL
@@ -75,7 +81,8 @@ CREATE TABLE [dbo].[Classes] (
     [ClassName] nvarchar(max)  NULL,
     [Professor] nvarchar(max)  NULL,
     [Starts] nvarchar(max)  NULL,
-    [Finish] nvarchar(max)  NULL
+    [Finish] nvarchar(max)  NULL,
+    [WeekDay] nvarchar(max)  NULL
 );
 GO
 
@@ -92,8 +99,8 @@ GO
 -- Creating table 'Timetables'
 CREATE TABLE [dbo].[Timetables] (
     [TimetableId] int IDENTITY(1,1) NOT NULL,
-    [UserId] nvarchar(max)  NOT NULL,
-    [ClassId] nvarchar(max)  NOT NULL
+    [UserId] int  NOT NULL,
+    [ClassId] int  NOT NULL
 );
 GO
 

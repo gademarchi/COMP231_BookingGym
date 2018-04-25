@@ -71,14 +71,21 @@ namespace BookingGym
                 ddlProvince.Text = us.Province;
                 txtPostalCode.Text = us.PostalCode;
 
-                if (us.Admin == "Yes")
+                if (us.Admin == "Admin")
                 {
-                    rdYes.Checked = true;
+                    rdAdmin.Checked = true;
+
                 }
-                else if (us.Admin == "No")
+                else if (us.Admin == "User")
                 {
-                    rdNo.Checked = true;
+                    rdUser.Checked = true;
                 }
+                else if (us.Admin == "Instructor")
+                {
+                    rdInstructor.Checked = true;
+                }
+
+
 
 
             }
@@ -99,13 +106,21 @@ namespace BookingGym
             user.PostalCode = txtPostalCode.Text;
             user.Province = ddlProvince.SelectedValue;
 
-            if (rdYes.Checked == true)
+            if (rdAdmin.Checked == true)
             {
-                user.Admin = "Yes";
+                user.Admin = "Admin";
+            }
+            else if (rdUser.Checked == true)
+            {
+                user.Admin = "User";
+            }
+            else if (rdInstructor.Checked == true)
+            {
+                user.Admin = "Instructor";
             }
             else
             {
-                user.Admin = "No";
+                user.Admin = "N/A";
             }
 
             db.SaveChanges();

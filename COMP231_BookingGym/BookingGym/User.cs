@@ -29,7 +29,7 @@ namespace BookingGym
         public string PostalCode { get; set; }
         public string Province { get; set; }
         public string Admin { get; set; }
-        public int TimetableTimetableId { get; set; }
+        public Nullable<int> TimetableTimetableId { get; set; }
         public string Weight { get; set; }
         public string Height { get; set; }
         public string Age { get; set; }

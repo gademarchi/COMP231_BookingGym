@@ -22,8 +22,8 @@ namespace BookingGym
         }
     
         public int TimetableId { get; set; }
-        public string UserId { get; set; }
-        public string ClassId { get; set; }
+        public int UserId { get; set; }
+        public int ClassId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Class> Classes { get; set; }
