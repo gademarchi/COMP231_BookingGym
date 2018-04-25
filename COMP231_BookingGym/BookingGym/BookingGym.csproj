@@ -144,6 +144,7 @@
     <Content Include="ManageClasses.aspx" />
     <Content Include="ManageUsers.aspx" />
     <Content Include="PostMessage.aspx" />
+    <Content Include="RegisterTimetable.aspx" />
     <Content Include="RegisterClass.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -257,6 +258,13 @@
     <Compile Include="PostMessage.aspx.designer.cs">
       <DependentUpon>PostMessage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RegisterTimetable.aspx.cs">
+      <DependentUpon>RegisterTimetable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterTimetable.aspx.designer.cs">
+      <DependentUpon>RegisterTimetable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegisterClass.aspx.cs">
       <DependentUpon>RegisterClass.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -310,6 +318,9 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Timetable.cs">
+      <DependentUpon>GymModel.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>GymModel.tt</DependentUpon>

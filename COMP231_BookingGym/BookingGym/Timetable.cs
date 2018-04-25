@@ -12,29 +12,22 @@ namespace BookingGym
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Timetable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Timetable()
         {
-            this.Timetables = new HashSet<Timetable>();
+            this.Classes = new HashSet<Class>();
+            this.Users = new HashSet<User>();
         }
     
-        public int UserId { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Address { get; set; }
-        public string City { get; set; }
-        public string PostalCode { get; set; }
-        public string Province { get; set; }
-        public string Admin { get; set; }
-        public int TimetableTimetableId { get; set; }
-        public string Weight { get; set; }
-        public string Height { get; set; }
-        public string Age { get; set; }
+        public int TimetableId { get; set; }
+        public string UserId { get; set; }
+        public string ClassId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Timetable> Timetables { get; set; }
+        public virtual ICollection<Class> Classes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

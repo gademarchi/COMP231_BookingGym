@@ -26,9 +26,8 @@
     <div class="input">
         <asp:Button runat="server" ID="btnSignUp" OnClick="btnSignUp_Click" class="btn btn-primary btn-block" Text="Sign Up"></asp:Button>
     </div>
-
-
-
+    <br />
+    <asp:Label runat="server" CssClass="alert alert-danger" ID="lblMsg" Text="Email or Password Incorrect" Visible="false"></asp:Label><br />
 
 
 </asp:Content>

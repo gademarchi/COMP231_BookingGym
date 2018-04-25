@@ -5,9 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f7baa99a215744f78565613e7ac1024e" Name="Diagram1" >
-        <EntityTypeShape EntityType="GymModel.User" Width="1.5" PointX="1.125" PointY="0.5" />
-        <EntityTypeShape EntityType="GymModel.Class" Width="1.5" PointX="3.875" PointY="0.75" />
-        <EntityTypeShape EntityType="GymModel.Message" Width="1.5" PointX="7.125" PointY="1.75" />
+        <EntityTypeShape EntityType="GymModel.User" Width="2.25" PointX="0.5" PointY="0.625" />
+        <EntityTypeShape EntityType="GymModel.Class" Width="1.5" PointX="5.875" PointY="1.125" />
+        <EntityTypeShape EntityType="GymModel.Message" Width="1.5" PointX="8.25" PointY="1.375" />
+        <EntityTypeShape EntityType="GymModel.Timetable" Width="1.5" PointX="3.375" PointY="1.375" />
+        <AssociationConnector Association="GymModel.TimetableClass" />
+        <AssociationConnector Association="GymModel.TimetableUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

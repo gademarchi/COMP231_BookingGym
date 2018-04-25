@@ -4,6 +4,25 @@
     <EntitySet Name="Users" EntityType="GymModel.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Classes" EntityType="GymModel.Store.Classes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Messages" EntityType="GymModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Timetables" EntityType="GymModel.Store.Timetables" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimetableClass" EntityType="GymModel.Store.TimetableClass" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimetableUser" EntityType="GymModel.Store.TimetableUser" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TimetableClass_Timetable" Association="GymModel.Store.FK_TimetableClass_Timetable">
+      <End Role="Timetable" EntitySet="Timetables" />
+      <End Role="TimetableClass" EntitySet="TimetableClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimetableClass_Class" Association="GymModel.Store.FK_TimetableClass_Class">
+      <End Role="Class" EntitySet="Classes" />
+      <End Role="TimetableClass" EntitySet="TimetableClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimetableUser_Timetable" Association="GymModel.Store.FK_TimetableUser_Timetable">
+      <End Role="Timetable" EntitySet="Timetables" />
+      <End Role="TimetableUser" EntitySet="TimetableUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimetableUser_User" Association="GymModel.Store.FK_TimetableUser_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TimetableUser" EntitySet="TimetableUser" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Users">
     <Key>
@@ -18,6 +37,10 @@
     <Property Name="PostalCode" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Province" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Admin" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TimetableTimetableId" Type="int" Nullable="false" />
+    <Property Name="Weight" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Height" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Age" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="Classes">
     <Key>
@@ -39,4 +62,76 @@
     <Property Name="From" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Posted" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
+  <EntityType Name="Timetables">
+    <Key>
+      <PropertyRef Name="TimetableId" />
+    </Key>
+    <Property Name="TimetableId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClassId" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimetableClass">
+    <Key>
+      <PropertyRef Name="Timetables_TimetableId" />
+      <PropertyRef Name="Classes_ClassId" />
+    </Key>
+    <Property Name="Timetables_TimetableId" Type="int" Nullable="false" />
+    <Property Name="Classes_ClassId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimetableUser">
+    <Key>
+      <PropertyRef Name="Timetables_TimetableId" />
+      <PropertyRef Name="Users_UserId" />
+    </Key>
+    <Property Name="Timetables_TimetableId" Type="int" Nullable="false" />
+    <Property Name="Users_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_TimetableClass_Timetable">
+    <End Role="Timetable" Type="GymModel.Store.Timetables" Multiplicity="1" />
+    <End Role="TimetableClass" Type="GymModel.Store.TimetableClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Timetable">
+        <PropertyRef Name="TimetableId" />
+      </Principal>
+      <Dependent Role="TimetableClass">
+        <PropertyRef Name="Timetables_TimetableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimetableClass_Class">
+    <End Role="TimetableClass" Type="GymModel.Store.TimetableClass" Multiplicity="*" />
+    <End Role="Class" Type="GymModel.Store.Classes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ClassId" />
+      </Principal>
+      <Dependent Role="TimetableClass">
+        <PropertyRef Name="Classes_ClassId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimetableUser_Timetable">
+    <End Role="Timetable" Type="GymModel.Store.Timetables" Multiplicity="1" />
+    <End Role="TimetableUser" Type="GymModel.Store.TimetableUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Timetable">
+        <PropertyRef Name="TimetableId" />
+      </Principal>
+      <Dependent Role="TimetableUser">
+        <PropertyRef Name="Timetables_TimetableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimetableUser_User">
+    <End Role="TimetableUser" Type="GymModel.Store.TimetableUser" Multiplicity="*" />
+    <End Role="User" Type="GymModel.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="TimetableUser">
+        <PropertyRef Name="Users_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

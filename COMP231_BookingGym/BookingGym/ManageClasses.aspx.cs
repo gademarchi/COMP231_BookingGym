@@ -71,7 +71,7 @@ namespace BookingGym
         {
             using (GymModelContainer db = new GymModelContainer())
             {
-                if (db.Users.Count() > 0)
+                if (db.Classes.Count() > 0)
                 {
                     gvClasses.DataSource = (from c in db.Classes
                                             select new { c.ClassId, c.ClassName, c.Professor, c.Starts, c.Finish }).ToList();

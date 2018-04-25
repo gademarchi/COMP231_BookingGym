@@ -111,9 +111,6 @@ namespace BookingGym
             db.SaveChanges();
             BindGrid();
 
-
-
-
         }
 
         protected void gvUsers_RowDeleting(object sender, GridViewDeleteEventArgs e)

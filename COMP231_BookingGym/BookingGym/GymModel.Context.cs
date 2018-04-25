@@ -28,5 +28,6 @@ namespace BookingGym
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Class> Classes { get; set; }
         public virtual DbSet<Message> Messages { get; set; }
+        public virtual DbSet<Timetable> Timetables { get; set; }
     }
 }

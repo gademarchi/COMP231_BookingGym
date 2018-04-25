@@ -14,10 +14,19 @@ namespace BookingGym
     
     public partial class Class
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Class()
+        {
+            this.Timetables = new HashSet<Timetable>();
+        }
+    
         public int ClassId { get; set; }
         public string ClassName { get; set; }
         public string Professor { get; set; }
         public string Starts { get; set; }
         public string Finish { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Timetable> Timetables { get; set; }
     }
 }

@@ -13,6 +13,10 @@
           <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
           <ScalarProperty Name="Province" ColumnName="Province" />
           <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="TimetableTimetableId" ColumnName="TimetableTimetableId" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -38,5 +42,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Timetables">
+      <EntityTypeMapping TypeName="IsTypeOf(GymModel.Timetable)">
+        <MappingFragment StoreEntitySet="Timetables">
+          <ScalarProperty Name="TimetableId" ColumnName="TimetableId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TimetableClass" TypeName="GymModel.TimetableClass" StoreEntitySet="TimetableClass">
+      <EndProperty Name="Timetable">
+        <ScalarProperty Name="TimetableId" ColumnName="Timetables_TimetableId" />
+      </EndProperty>
+      <EndProperty Name="Class">
+        <ScalarProperty Name="ClassId" ColumnName="Classes_ClassId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TimetableUser" TypeName="GymModel.TimetableUser" StoreEntitySet="TimetableUser">
+      <EndProperty Name="Timetable">
+        <ScalarProperty Name="TimetableId" ColumnName="Timetables_TimetableId" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="UserId" ColumnName="Users_UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

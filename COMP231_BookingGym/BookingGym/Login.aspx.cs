@@ -22,6 +22,38 @@ namespace BookingGym
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
 
+            using (GymModelContainer db = new GymModelContainer())
+            {
+
+                var checkEmail = (from ce in db.Users
+                                  where ce.Email == txtEmail.Text
+                                  select ce.Email).SingleOrDefault();
+
+                var checkPassword = (from cp in db.Users
+                                     where cp.Email == txtEmail.Text
+                                     select cp.Password).SingleOrDefault();
+
+                if(checkEmail != txtEmail.Text)
+                {
+                    lblMsg.Visible = true;
+                    
+                }
+                else if(checkPassword != txtPassword.Text)
+                {
+                    lblMsg.Visible = true;
+                }
+                else
+                {
+                    Response.Redirect("ManageClasses.aspx");
+                }
+
+
+
+
+            }
+
+
+
         }
     }
 }

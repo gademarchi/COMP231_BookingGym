@@ -62,6 +62,7 @@
                         <li><a runat="server" href="~/ManageClasses">Manage Classes</a></li>
                         <li><a runat="server" href="~/PostMessage">Post a Message</a></li>
                         <li><a runat="server" href="~/ViewMessages">View Messages</a></li>
+                        <li><a runat="server" href="~/RegisterTimetable">Register Timetable</a></li>
                     </ul>
                 </div>
             </div>
