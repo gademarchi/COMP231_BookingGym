@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <br />
+    <br />
     <asp:GridView ID="gvClasses" runat="server" CssClass="table table-hover" TabIndex="1"
         OnRowUpdating="gvClasses_RowUpdating" OnRowDeleting="gvClasses_RowDeleting"
         AutoGenerateColumns="False" DataKeyNames="ClassId" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -14,7 +15,7 @@
             <asp:BoundField DataField="WeekDay" HeaderText="WeekDay" SortExpression="WeekDay" />
             <asp:BoundField DataField="Starts" HeaderText="Starts" SortExpression="Starts" />
             <asp:BoundField DataField="Finish" HeaderText="Finish" SortExpression="Finish" />
-            <asp:ButtonField CommandName="Update" Text="Update" ButtonType="Button" ControlStyle-CssClass="btn btn-warning btn-sm p-1">
+            <asp:ButtonField CommandName="Update" Text="Update" ButtonType="Button" ControlStyle-CssClass="btn btn-success btn-sm p-1">
                 <ControlStyle CssClass="btn btn-warning btn-sm p-1"></ControlStyle>
             </asp:ButtonField>
             <asp:ButtonField CommandName="Delete" Text="Delete" ButtonType="Button" ControlStyle-CssClass="btn btn-danger btn-sm p-1">

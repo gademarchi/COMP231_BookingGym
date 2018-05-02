@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="View Messages" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewMessages.aspx.cs" Inherits="BookingGym.ViewMessages" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
+    <br />
+    <br />
     <h3><%:Title %> </h3>
     <asp:GridView ID="gvMessages" runat="server" AutoGenerateColumns="False"
         DataKeyNames="MessageId" CssClass="table table-hover" CellPadding="4" ForeColor="#333333" GridLines="None" >

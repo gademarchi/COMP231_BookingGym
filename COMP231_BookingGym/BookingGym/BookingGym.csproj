@@ -208,6 +208,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="UserMap.aspx" />
     <Content Include="ViewMessages.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="ViewTimetable.aspx" />
@@ -318,6 +319,13 @@
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>GymModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserMap.aspx.cs">
+      <DependentUpon>UserMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserMap.aspx.designer.cs">
+      <DependentUpon>UserMap.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewMessages.aspx.cs">
       <DependentUpon>ViewMessages.aspx</DependentUpon>

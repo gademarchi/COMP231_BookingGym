@@ -1,9 +1,13 @@
 ﻿<%@ Page Title="View Timetable" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ViewTimetable.aspx.cs" Inherits="BookingGym.ViewTimetable" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
+    <br />
+    <br />
     <h3><%:Title %></h3>
-<br />
-    <asp:GridView ID="gvTimetables" runat="server" AutoGenerateColumns="False" CssClass="table table-hover" CellPadding="4" DataKeyNames="TimetableId" ForeColor="#333333" GridLines="None">
+    <br />
+    <asp:GridView ID="gvTimetables" runat="server" AutoGenerateColumns="False"
+        CssClass="table table-hover"  OnRowDeleting="gvTimetables_RowDeleting" CellPadding="4" DataKeyNames="TimetableId" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
             <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
@@ -13,6 +17,7 @@
             <asp:BoundField DataField="Starts" HeaderText="Starts" SortExpression="Starts" />
             <asp:BoundField DataField="Finish" HeaderText="Finish" SortExpression="Finish" />
             <asp:BoundField DataField="TimetableId" HeaderText="TimetableId" InsertVisible="False" ReadOnly="True" SortExpression="TimetableId" />
+            <asp:ButtonField CommandName="Delete" Text="Delete" ButtonType="Button" ControlStyle-CssClass="btn btn-danger btn-sm p-1"></asp:ButtonField>
         </Columns>
     </asp:GridView>
 

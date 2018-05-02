@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f7baa99a215744f78565613e7ac1024e" Name="Diagram1" >
-        <EntityTypeShape EntityType="GymModel.User" Width="2.25" PointX="0.5" PointY="0.625" />
-        <EntityTypeShape EntityType="GymModel.Class" Width="1.5" PointX="5.875" PointY="1.125" />
-        <EntityTypeShape EntityType="GymModel.Message" Width="1.5" PointX="8.25" PointY="1.375" />
-        <EntityTypeShape EntityType="GymModel.Timetable" Width="1.5" PointX="3.375" PointY="1.375" />
+      <Diagram DiagramId="f7baa99a215744f78565613e7ac1024e" Name="Diagram1" DisplayType="true" ZoomLevel="100" >
+        <EntityTypeShape EntityType="GymModel.User" Width="2.5" PointX="4.125" PointY="2" />
+        <EntityTypeShape EntityType="GymModel.Class" Width="1.875" PointX="1.875" PointY="0.625" />
+        <EntityTypeShape EntityType="GymModel.Message" Width="2" PointX="7.125" PointY="2" />
+        <EntityTypeShape EntityType="GymModel.Timetable" Width="1.75" PointX="0.75" PointY="3.625" />
         <AssociationConnector Association="GymModel.TimetableClass" />
         <AssociationConnector Association="GymModel.TimetableUser" />
       </Diagram>

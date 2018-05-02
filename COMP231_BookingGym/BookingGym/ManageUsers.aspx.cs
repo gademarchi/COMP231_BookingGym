@@ -34,7 +34,9 @@ namespace BookingGym
                 if (db.Users.Count() > 0)
                 {
                     gvUsers.DataSource = (from u in db.Users
-                                          select new { u.UserId, u.Name, u.Email, u.Password, u.Address, u.City, u.Province, u.PostalCode, u.Admin }).ToList();
+                                          select new { u.UserId, u.Name, u.Email,
+                                              u.Password, u.Address, u.City,
+                                              u.Province, u.PostalCode, u.Admin }).ToList();
 
                     gvUsers.DataBind();
 
@@ -52,6 +54,41 @@ namespace BookingGym
 
         protected void gvUsers_RowCommand(object sender, GridViewCommandEventArgs e)
         {
+            if (e.CommandName == "Admin")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvUsers.Rows[index];
+                int UserId = Convert.ToInt32(gvUsers.DataKeys[index].Value);
+
+                GymModelContainer db = new GymModelContainer();
+
+                User user = db.Users.First(u => u.UserId == UserId);
+
+                user.Admin = "Yes";
+
+                db.SaveChanges();
+
+            }
+            else if(e.CommandName == "Undo")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = gvUsers.Rows[index];
+                int UserId = Convert.ToInt32(gvUsers.DataKeys[index].Value);
+
+                GymModelContainer db = new GymModelContainer();
+
+                User user = db.Users.First(u => u.UserId == UserId);
+
+                user.Admin = "No";
+
+                db.SaveChanges();
+
+            }
+
+
+            BindGrid();
+
+
 
         }
 
@@ -142,5 +179,52 @@ namespace BookingGym
             }
 
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            BindSearch();
+        }
+
+
+        public void BindSearch()
+        {
+            using (GymModelContainer db = new GymModelContainer())
+            {
+                if (db.Users.Count() > 0)
+                {
+                    gvUsers.DataSource = (from u in db.Users
+                                          where u.Name.Contains(txtSearch.Text) || u.Email.Contains(txtSearch.Text) ||
+                                          u.Address.Contains(txtSearch.Text) || u.City.Contains(txtSearch.Text)
+                                          select new
+                                          {   u.UserId,
+                                              u.Name,
+                                              u.Email,
+                                              u.Password,
+                                              u.Address,
+                                              u.City,
+                                              u.Province,
+                                              u.PostalCode,
+                                              u.Admin
+                                          }).ToList();
+
+                    gvUsers.DataBind();
+
+                }
+                else
+                {
+                    gvUsers.DataSource = null;
+                    gvUsers.DataBind();
+                }
+
+
+
+            }
+
+
+
+
+        }
+
+
     }
 }

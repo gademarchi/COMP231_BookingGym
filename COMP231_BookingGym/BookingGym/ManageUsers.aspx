@@ -1,7 +1,15 @@
 ﻿<%@ Page Title="Manage Users" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageUsers.aspx.cs" Inherits="BookingGym.ManageUsers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="form-inline">
+        <asp:TextBox runat="server" ID="txtSearch" class="form-control mr-sm-2" type="search" placeholder="Search"></asp:TextBox>
+        <asp:Button runat="server" ID="btnSearch" OnClick="btnSearch_Click" class="btn btn-success my-2 my-sm-0" Text="Search"></asp:Button>
+    </div>
     <br />
     <img class="mb-4" src="http://icons.iconarchive.com/icons/sonya/swarm/128/gym-icon.png" alt="" width="72" height="72">&nbsp;<h3><%: Title %></h3>
     <asp:GridView ID="gvUsers" runat="server" CellPadding="4" TabIndex="1"
@@ -19,19 +27,11 @@
             <asp:BoundField DataField="PostalCode" HeaderText="PostalCode" SortExpression="PostalCode" />
             <asp:BoundField DataField="Province" HeaderText="Province" SortExpression="Province" />
             <asp:BoundField DataField="Admin" HeaderText="Admin" SortExpression="Admin" />
-            <asp:ButtonField CommandName="Update" Text="Update" ButtonType="Button" ControlStyle-CssClass="btn btn-warning btn-sm p-1"></asp:ButtonField>
+            <asp:ButtonField CommandName="Update" Text="Update" ButtonType="Button" ControlStyle-CssClass="btn btn-success btn-sm p-1"></asp:ButtonField>
             <asp:ButtonField CommandName="Delete" Text="Delete" ButtonType="Button" ControlStyle-CssClass="btn btn-danger btn-sm p-1"></asp:ButtonField>
+            <asp:ButtonField CommandName="Admin" Text="Admin" ButtonType="Button" ControlStyle-CssClass="btn btn-info btn-sm p-1"></asp:ButtonField>
+            <asp:ButtonField CommandName="Undo" Text="Undo" ButtonType="Button" ControlStyle-CssClass="btn btn-warning btn-sm p-1"></asp:ButtonField>
         </Columns>
-        <%--            <EditRowStyle BackColor="#999999" />
-            <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-            <SortedAscendingCellStyle BackColor="#E9E7E2" />
-            <SortedAscendingHeaderStyle BackColor="#506C8C" />
-            <SortedDescendingCellStyle BackColor="#FFFDF8" />
-            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />--%>
     </asp:GridView>
     <br />
 

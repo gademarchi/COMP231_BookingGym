@@ -88,6 +88,9 @@
                         <li class="nav-item">
                             <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkCList" Visible="false" Text="Class List" href="ClassList.aspx"></asp:LinkButton>
                         </li>
+                        <li class="nav-item">
+                            <asp:LinkButton runat="server" CssClass="nav-link btn-sm nav-link-custom" ID="lnkUserMap" Visible="true" Text="User Map" href="UserMap.aspx"></asp:LinkButton>
+                        </li>
                         <li class="nav-item"><a runat="server"><%:Session["Email"] %></a></li>
                         <li class="navbar-brand">
                             <asp:Button CssClass="btn btn-primary my-2 my-sm-0 btn-sm" ID="btnLogout" runat="server" Visible="false" Text="Log Out" OnClick="btnLogout_Click" />

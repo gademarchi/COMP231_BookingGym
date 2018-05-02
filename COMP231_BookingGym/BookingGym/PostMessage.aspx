@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
+    <br />
+    <br />
     <h3><%:Title %> </h3>
     <br />
     <div class="form-center">

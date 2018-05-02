@@ -11,7 +11,10 @@ namespace BookingGym
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadInstructor();
+            if (!IsPostBack)
+            {
+                LoadInstructor();
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -20,7 +23,7 @@ namespace BookingGym
             {
                 var cl = new Class();
                 cl.ClassName = txtClassName.Text;
-                cl.Professor = ddlInstructor.Text;
+                cl.Professor = ddlInstructor.SelectedValue;
                 cl.WeekDay = ddlWeekDay.SelectedValue;
                 cl.Starts = txtClassStarts.Text;
                 cl.Finish = txtClassFinish.Text;
